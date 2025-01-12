@@ -9,7 +9,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
 
-const PORT = 8001;
+const PORT = 8080;
 
 // Middleware
 app.use(cors({
@@ -24,5 +24,5 @@ app.use(express.static(path.join(__dirname,"public")));
 
 // Start the server
 app.listen(PORT, () => {
-  console.log(`Server running on http://24.199.114.31:8001/`);
+  console.log(`Server running on http://24.199.114.31:8080/`);
 });
