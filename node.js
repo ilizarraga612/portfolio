@@ -18,9 +18,14 @@ app.use(cors({
 }));
 
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public"))); // serve static files
+
+// Serve home.html on the root route
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "home.html"));
+});
 
 // Start the server
 app.listen(PORT, () => {
-  console.log(`Server running on http://24.199.114.31:${PORT}/`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });
