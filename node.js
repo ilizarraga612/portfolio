@@ -18,7 +18,9 @@ app.use(cors({
 }));
 
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, "public"))); // serve static files
+
+app.use(express.static(path.join(__dirname)));  // Serve files from the current folder
+
 
 // Serve home.html on the root route
 app.get("/", (req, res) => {
